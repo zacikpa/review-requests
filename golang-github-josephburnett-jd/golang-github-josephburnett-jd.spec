@@ -36,7 +36,6 @@ BuildRequires: golang(gopkg.in/yaml.v2)
 %gobuild -o %{gobuilddir}/bin/jd %{goipath}
 
 %install
-%gopkginstall
 install -m 0755 -vd                     %{buildroot}%{_bindir}
 install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
@@ -49,8 +48,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %license LICENSE
 %doc README.md RELEASE_NOTES.md
 %{_bindir}/*
-
-%gopkgfiles
 
 %changelog
 %autochangelog
